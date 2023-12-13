@@ -9,9 +9,9 @@
         when: ansible_os_family == "Debian"
 
 
-      - name: i want to install openJDK 8 on ubuntu node
+      - name: i want to install openJDK 8 on RedHat node
         yum:
-            name: httpd
+            name: java-1.8.0-openjdk
             state: present 
         when: ansible_os_family == "RedHat"
       
