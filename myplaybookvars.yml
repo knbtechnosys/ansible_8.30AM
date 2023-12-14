@@ -1,0 +1,24 @@
+---
+- hosts: 172.31.16.240
+  become: yes
+  vars:
+    myvar1 : git
+    myvar2 : wget
+    myvar3 : tree
+  tasks:
+      - name : i want to install git on ubuntu node
+        apt:
+            name: "{{myvar1}}"
+            state: present
+
+
+        - name : i want to install wget on ubuntu node
+        apt:
+            name: "{{myvar2}}"
+            state: present
+
+
+        - name : i want to install tree on ubuntu node
+        apt:
+            name: "{{myvar3}}"
+            state: present          
