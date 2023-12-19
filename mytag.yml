@@ -11,7 +11,7 @@
 
         - name: i want to install tree
           apt:
-              name: tree
+              name: treee
               state: present
           tags: mytree
 
