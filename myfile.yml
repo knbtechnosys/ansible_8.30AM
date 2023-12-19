@@ -12,4 +12,4 @@
       - name: i want replay apache2 template with my page
         template:
            src: myapachepage.j2
-           dst: /var/www/html/index.html
+           dest: /var/www/html/index.html
