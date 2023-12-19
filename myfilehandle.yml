@@ -1,0 +1,8 @@
+---
+- hosts: 172.31.16.240 
+  become: yes
+  tasks:
+        - name: i want to create a file in ubuntu server
+          file:
+            path: /home/nitin/myfile
+            state: present
