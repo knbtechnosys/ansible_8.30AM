@@ -1,13 +1,19 @@
 ---
-- hosts: 172.31.16.240 
+- hosts: all 
   become: yes
   tasks:
       - include_tasks: myfilehandle.yml
 
-      - name: i want to install apache2
+      - name: i want to install apache2 on ubuntu
         apt:
             name: apache2
+        when: ansible_os_family= " Debian"
+
+      - name: i want to install httpd on RedHat
+        apt:
+            name: httpd
             state: present
+        when: ansible_os_family= "RedHat"
 
       - name: i want replay apache2 template with my page
         template:
