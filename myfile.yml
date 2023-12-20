@@ -7,11 +7,19 @@
       - name: i want to install apache2 on ubuntu
         apt:
             name: apache2
-        when: ansible_os_family== " Debian"
+        notify: restartwebserver
+ 
 
       
       - name: i want replay apache2 template with my page
         template:
            src: mytemplate/mypage.j2
            dest: /var/www/html/index.html
+
+    handlers:  
+      - name:  restartwebserver
+        service:
+           name:  apache2
+           state: restarted
+
       
