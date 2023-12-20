@@ -10,14 +10,8 @@
         when: ansible_os_family== " Debian"
 
       
-      - name: i want to install httpd on RedHat
-        yum:
-            name: httpd
-            state: present
-        when: ansible_os_family== "RedHat"
-
       - name: i want replay apache2 template with my page
         template:
            src: mytemplate/mypage.j2
            dest: /var/www/html/index.html
-        when: ansible_os_family== " Debian"
+      
