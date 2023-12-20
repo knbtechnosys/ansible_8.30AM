@@ -16,7 +16,7 @@
            src: mytemplate/mypage.j2
            dest: /var/www/html/index.html
 
-    handlers:  
+  handlers:  
       - name:  restartwebserver
         service:
            name:  apache2
