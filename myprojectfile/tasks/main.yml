@@ -5,4 +5,9 @@
             name: apache2
             state: present 
         notify: restartwebserver
+
+      - name: i want replay apache2 template with my page
+        template:
+           src: mytemplate/mypage.j2
+           dest: /var/www/html/index.html
         
